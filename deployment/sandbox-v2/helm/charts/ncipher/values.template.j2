@@ -1,0 +1,33 @@
+name: ncipher-hwsp
+
+docker:
+  image: madrasindiadeploy/nshield-hwsp
+  tag: 12.60.3 
+
+socket:
+  hostPath: {{ ncipher.socket.host_path }}
+  mount: {{ ncipher.socket.mount }}
+
+config: 
+  path: {{ ncipher.config.path }} 
+  mount: {{ ncipher.config.mount }} 
+
+dockerHub:
+  private: {{ docker_hub.private }}  
+  keyname: {{ docker_hub.keyname }}
+
+nfs:
+  server: {{ nfs.server }}
+sc:
+  name: ""
+pv:
+  name: ncipher-hwsp-pv
+  size: 20Mi
+pvc:
+  name: ncipher-hwsp-pvc
+  size: 20Mi 
+
+probe:
+  initialDelay: 15  # Seconds
+  period: 30 # Seconds
+healthUrl: ''

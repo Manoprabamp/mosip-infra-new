@@ -1,0 +1,40 @@
+pkt_conf = {
+    'id_schema': 0.0,
+    'rid': '',
+    'creation_date' : '',
+    'prereg_id' : '', # Eg. '37029479274360'
+    'machine_id': '10000',
+    'center_id': '10002',
+    'officer_id': '110006',
+    'city': 'Kenitra',
+    'province': 'Kenitra',
+    'region' : 'Rabat Sale Kenitra',
+     # Individual demographic
+    'full_name': 'Nice Guy',
+    'postal_code': '14022',
+    'dob': '1980/11/22',
+    'address_line1': 'HSR Colony',
+    'address_line2': 'SECTOR-2',
+    'address_line3': 'EPIP',
+    'resident_status': 'Non-Foreigner',
+    'phone' : '7259791858',
+    'email': 'nice@xyz.com',
+    # new fields added here
+    'pob_country':  'Abra',
+    'cprovince': 'Abra',
+    'suffix': 'KAFNLN',
+    'blood_type': 'O',
+    'pob_province': 'Bangued (Capital)',
+    'caddress_line1': 'begur road',
+    'caddress_line2': 'bangalore',
+    'caddress_line3': 'Karnataka',
+    'caddress_line4': '560068',
+    'pob_city': 'Lingtan',
+    'address_line4': 'EPIP',
+    'marital_status': 'Single',
+    'barangay': 'Arellano (Pob.)',
+    'ccity': 'Bangued (Capital)',
+    'cpostal_code': '2800',
+    'cbarangay': 'Lingtan'
+}
+

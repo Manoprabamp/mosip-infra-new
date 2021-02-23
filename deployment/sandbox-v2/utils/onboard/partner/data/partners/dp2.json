@@ -1,0 +1,11 @@
+{
+    "id" : "dp2",
+    "name" : "Face Webcam",
+    "contact": "574674335",
+    "address": "Manila",
+    "email" : "dp2@yz.com",
+    "partner_domain": "DEVICE",
+    "partner_type": "Device_Provider",
+    "certs": [],
+    "policies" : []
+}

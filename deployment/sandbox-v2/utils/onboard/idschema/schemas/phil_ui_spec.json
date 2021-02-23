@@ -1,0 +1,1421 @@
+{
+  "id": "8c145f80-02a2-436a-adf1-dec1feef67a9",
+  "idVersion": 0.1,
+  "schema": [{
+    "id": "IDSchemaVersion",
+    "inputRequired": false,
+    "type": "number",
+    "minimum": 0,
+    "maximum": 0,
+    "description": "ID Schema Version",
+    "label": {
+      "primary": "IDSchemaVersion"
+    },
+    "controlType": null,
+    "fieldType": "default",
+    "format": "none",
+    "validators": [],
+    "fieldCategory": "none",
+    "alignmentGroup": null,
+    "visible": null,
+    "contactType": null,
+    "group": null,
+    "changeAction": null,
+    "required": true,
+    "bioAttributes": null,
+    "requiredOn": [],
+    "subType": "IdSchemaVersion"
+  }, {
+    "id": "UIN",
+    "inputRequired": false,
+    "type": "string",
+    "minimum": 0,
+    "maximum": 0,
+    "description": "UIN",
+    "label": {
+      "primary": "UIN"
+    },
+    "controlType": "textbox",
+    "fieldType": "default",
+    "format": "none",
+    "validators": [],
+    "fieldCategory": "none",
+    "alignmentGroup": null,
+    "visible": null,
+    "contactType": null,
+    "group": null,
+    "changeAction": null,
+    "required": false,
+    "bioAttributes": null,
+    "requiredOn": [],
+    "subType": "UIN"
+  }, {
+    "id": "suffix",
+    "inputRequired": true,
+    "type": "simpleType",
+    "minimum": 0,
+    "maximum": 0,
+    "description": "Suffix",
+    "label": {
+      "primary": "Suffix"
+    },
+    "controlType": "textbox",
+    "fieldType": "default",
+    "format": "none",
+    "validators": [{
+      "type": "regex",
+      "validator": "^(?=.{3,50}$).*",
+      "arguments": []
+    }],
+    "fieldCategory": "pvt",
+    "alignmentGroup": "applicantName",
+    "visible": null,
+    "contactType": null,
+    "group": "FullName",
+    "changeAction": null,
+    "required": false,
+    "bioAttributes": null,
+    "requiredOn": [],
+    "subType": "name"
+  }, {
+    "id": "firstName",
+    "inputRequired": true,
+    "type": "simpleType",
+    "minimum": 0,
+    "maximum": 0,
+    "description": "First Name",
+    "label": {
+      "primary": "First Name"
+    },
+    "controlType": "textbox",
+    "fieldType": "default",
+    "format": "none",
+    "validators": [{
+      "type": "regex",
+      "validator": "^(?=.{3,50}$).*",
+      "arguments": []
+    }],
+    "fieldCategory": "pvt",
+    "alignmentGroup": "applicantName",
+    "visible": null,
+    "contactType": null,
+    "group": "FullName",
+    "changeAction": null,
+    "required": true,
+    "bioAttributes": null,
+    "requiredOn": [],
+    "subType": "name"
+  }, {
+    "id": "middleName",
+    "inputRequired": true,
+    "type": "simpleType",
+    "minimum": 0,
+    "maximum": 0,
+    "description": "Middle Name",
+    "label": {
+      "primary": "Middle Name"
+    },
+    "controlType": "textbox",
+    "fieldType": "default",
+    "format": "none",
+    "validators": [{
+      "type": "regex",
+      "validator": "^(?=.{3,50}$).*",
+      "arguments": []
+    }],
+    "fieldCategory": "pvt",
+    "alignmentGroup": "applicantName",
+    "visible": null,
+    "contactType": null,
+    "group": "FullName",
+    "changeAction": null,
+    "required": true,
+    "bioAttributes": null,
+    "requiredOn": [],
+    "subType": "name"
+  }, {
+    "id": "lastName",
+    "inputRequired": true,
+    "type": "simpleType",
+    "minimum": 0,
+    "maximum": 0,
+    "description": "Last Name",
+    "label": {
+      "primary": "Last Name"
+    },
+    "controlType": "textbox",
+    "fieldType": "default",
+    "format": "none",
+    "validators": [{
+      "type": "regex",
+      "validator": "^(?=.{3,50}$).*",
+      "arguments": []
+    }],
+    "fieldCategory": "pvt",
+    "alignmentGroup": "applicantName",
+    "visible": null,
+    "contactType": null,
+    "group": "FullName",
+    "changeAction": null,
+    "required": true,
+    "bioAttributes": null,
+    "requiredOn": [],
+    "subType": "name"
+  }, {
+    "id": "dateOfBirth",
+    "inputRequired": true,
+    "type": "string",
+    "minimum": 0,
+    "maximum": 0,
+    "description": "dateOfBirth",
+    "label": {
+      "primary": "DOB"
+    },
+    "controlType": "ageDate",
+    "fieldType": "default",
+    "format": "none",
+    "validators": [{
+      "type": "regex",
+      "validator": "^(1869|18[7-9][0-9]|19[0-9][0-9]|20[0-9][0-9])/([0][1-9]|1[0-2])/([0][1-9]|[1-2][0-9]|3[01])$",
+      "arguments": []
+    }],
+    "fieldCategory": "pvt",
+    "alignmentGroup": null,
+    "visible": null,
+    "contactType": null,
+    "group": "DateOfBirth",
+    "changeAction": null,
+    "required": true,
+    "bioAttributes": null,
+    "requiredOn": [{
+      "engine": "MVEL",
+      "expr": "identity.?isNew || (identity.isUpdate && (identity.updatableFieldGroups contains 'GuardianDetails' || identity.updatableFieldGroups contains 'DateOfBirth'))"
+    }],
+    "subType": "dateOfBirth"
+  }, {
+    "id": "pobCountry",
+    "inputRequired": true,
+    "type": "simpleType",
+    "minimum": 0,
+    "maximum": 0,
+    "description": "Country",
+    "label": {
+      "primary": "Birth Country"
+    },
+    "controlType": "dropdown",
+    "fieldType": "default",
+    "format": "none",
+    "validators": [{
+      "type": "regex",
+      "validator": "^(?=.{0,50}$).*",
+      "arguments": []
+    }],
+    "fieldCategory": "pvt",
+    "alignmentGroup": "applicantBirthplace",
+    "visible": null,
+    "contactType": "Postal",
+    "group": "placeofbirthLoc",
+    "changeAction": null,
+    "required": true,
+    "bioAttributes": null,
+    "requiredOn": [],
+    "subType": "Country"
+  }, {
+    "id": "pobprovince",
+    "inputRequired": true,
+    "type": "simpleType",
+    "minimum": 0,
+    "maximum": 0,
+    "description": "province",
+    "label": {
+      "primary": "Birth Province"
+    },
+    "controlType": "dropdown",
+    "fieldType": "default",
+    "format": "none",
+    "validators": [{
+      "type": "regex",
+      "validator": "^(?=.{0,50}$).*",
+      "arguments": []
+    }],
+    "fieldCategory": "pvt",
+    "alignmentGroup": "applicantBirthplace",
+    "visible": null,
+    "contactType": "Postal",
+    "group": "placeofbirthLoc",
+    "changeAction": null,
+    "required": true,
+    "bioAttributes": null,
+    "requiredOn": [],
+    "subType": "Province"
+  }, {
+    "id": "pobcity",
+    "inputRequired": true,
+    "type": "simpleType",
+    "minimum": 0,
+    "maximum": 0,
+    "description": "city",
+    "label": {
+      "primary": "Birth City"
+    },
+    "controlType": "dropdown",
+    "fieldType": "default",
+    "format": "none",
+    "validators": [{
+      "type": "regex",
+      "validator": "^(?=.{0,50}$).*",
+      "arguments": []
+    }],
+    "fieldCategory": "pvt",
+    "alignmentGroup": "applicantBirthplace",
+    "visible": null,
+    "contactType": "Postal",
+    "group": "placeofbirthLoc",
+    "changeAction": null,
+    "required": true,
+    "bioAttributes": null,
+    "requiredOn": [],
+    "subType": "City"
+  }, {
+    "id": "gender",
+    "inputRequired": true,
+    "type": "simpleType",
+    "minimum": 0,
+    "maximum": 0,
+    "description": "gender",
+    "label": {
+      "primary": "Gender"
+    },
+    "controlType": "button",
+    "fieldType": "default",
+    "format": "",
+    "validators": [],
+    "fieldCategory": "pvt",
+    "alignmentGroup": "miscellaneous2",
+    "visible": null,
+    "contactType": null,
+    "group": "Gender",
+    "changeAction": null,
+    "required": true,
+    "bioAttributes": null,
+    "requiredOn": [],
+    "subType": "Gender"
+  }, {
+    "id": "residenceStatus",
+    "inputRequired": true,
+    "type": "simpleType",
+    "minimum": 0,
+    "maximum": 0,
+    "description": "residenceStatus",
+    "label": {
+      "primary": "Residence Status"
+    },
+    "controlType": "button",
+    "fieldType": "default",
+    "format": "none",
+    "validators": [],
+    "fieldCategory": "kyc",
+    "alignmentGroup": "miscellaneous2",
+    "visible": null,
+    "contactType": null,
+    "group": "ResidenceStatus",
+    "changeAction": null,
+    "required": false,
+    "bioAttributes": null,
+    "requiredOn": [],
+    "subType": "residenceStatus"
+  }, {
+    "id": "bloodType",
+    "inputRequired": true,
+    "type": "simpleType",
+    "minimum": 0,
+    "maximum": 0,
+    "description": "Blood type",
+    "label": {
+      "primary": "Blood Group"
+    },
+    "controlType": "dropdown",
+    "fieldType": "dynamic",
+    "format": "",
+    "validators": [],
+    "fieldCategory": "pvt",
+    "alignmentGroup": "miscellaneous",
+    "visible": null,
+    "contactType": null,
+    "group": "Blood Type",
+    "changeAction": null,
+    "required": true,
+    "bioAttributes": null,
+    "requiredOn": [],
+    "subType": "none"
+  }, {
+    "id": "maritalStatus",
+    "inputRequired": true,
+    "type": "simpleType",
+    "minimum": 0,
+    "maximum": 0,
+    "description": "Marital status",
+    "label": {
+      "primary": "Marital status"
+    },
+    "controlType": "dropdown",
+    "fieldType": "dynamic",
+    "format": "none",
+    "validators": [],
+    "fieldCategory": "pvt",
+    "alignmentGroup": "miscellaneous",
+    "visible": null,
+    "contactType": null,
+    "group": "Marital Status",
+    "changeAction": null,
+    "required": false,
+    "bioAttributes": null,
+    "requiredOn": [],
+    "subType": "none"
+  }, {
+    "id": "addressCopy",
+    "inputRequired": true,
+    "type": "string",
+    "minimum": 0,
+    "maximum": 0,
+    "description": "addressCopy flag",
+    "label": {
+      "primary": "Tick mark this box to copy present address to permanent address"
+    },
+    "controlType": "checkbox",
+    "fieldType": "default",
+    "format": "none",
+    "validators": [{
+      "type": "regex",
+      "validator": "^(?=.{0,50}$).*",
+      "arguments": []
+    }],
+    "fieldCategory": "pvt",
+    "alignmentGroup": null,
+    "visible": null,
+    "contactType": null,
+    "group": "PermanentAddress",
+    "changeAction": "disable:country,addressLine1,addressLine2,addressLine3,addressLine4,city,province,barangay,postalcode",
+    "required": true,
+    "bioAttributes": null,
+    "requiredOn": [],
+    "subType": "addressCopy"
+  }, {
+    "id": "presentCountry",
+    "inputRequired": true,
+    "type": "simpleType",
+    "minimum": 0,
+    "maximum": 0,
+    "description": "Country",
+    "label": {
+      "primary": "Present Country"
+    },
+    "controlType": "dropdown",
+    "fieldType": "default",
+    "format": "none",
+    "validators": [{
+      "type": "regex",
+      "validator": "^(?=.{0,50}$).*",
+      "arguments": []
+    }],
+    "fieldCategory": "pvt",
+    "alignmentGroup": null,
+    "visible": null,
+    "contactType": "Postal",
+    "group": "PresentAddress",
+    "changeAction": "copyto:presentCountry,country,addressCopy",
+    "required": true,
+    "bioAttributes": null,
+    "requiredOn": [],
+    "subType": "Country"
+  }, {
+    "id": "caddressLine1",
+    "inputRequired": true,
+    "type": "simpleType",
+    "minimum": 0,
+    "maximum": 0,
+    "description": "addressLine1",
+    "label": {
+      "primary": "Present Rm/Flr/Unit No. Bldg Name"
+    },
+    "controlType": "textbox",
+    "fieldType": "default",
+    "format": "none",
+    "validators": [{
+      "type": "regex",
+      "validator": "^(?=.{0,50}$).*",
+      "arguments": []
+    }],
+    "fieldCategory": "pvt",
+    "alignmentGroup": "present",
+    "visible": {
+      "engine": "MVEL",
+      "expr": "( identity['presentCountry'] != null )"
+    },
+    "contactType": "Postal",
+    "group": "PresentAddress",
+    "changeAction": "copyto:caddressLine1,addressLine1,addressCopy",
+    "required": false,
+    "bioAttributes": null,
+    "requiredOn": [{
+      "engine": "MVEL",
+      "expr": "( identity['presentCountry'] != null )"
+    }],
+    "subType": "addressLine1"
+  }, {
+    "id": "caddressLine2",
+    "inputRequired": true,
+    "type": "simpleType",
+    "minimum": 0,
+    "maximum": 0,
+    "description": "addressLine2",
+    "label": {
+      "primary": "Present House/Lot/Block no."
+    },
+    "controlType": "textbox",
+    "fieldType": "default",
+    "format": "none",
+    "validators": [{
+      "type": "regex",
+      "validator": "^(?=.{3,50}$).*",
+      "arguments": []
+    }],
+    "fieldCategory": "pvt",
+    "alignmentGroup": "present",
+    "visible": {
+      "engine": "MVEL",
+      "expr": "( identity['presentCountry'] != null )"
+    },
+    "contactType": "Postal",
+    "group": "PresentAddress",
+    "changeAction": "copyto:caddressLine2,addressLine2,addressCopy",
+    "required": false,
+    "bioAttributes": null,
+    "requiredOn": [{
+      "engine": "MVEL",
+      "expr": "( identity['presentCountry'] != null )"
+    }],
+    "subType": "addressLine2"
+  }, {
+    "id": "caddressLine3",
+    "inputRequired": true,
+    "type": "simpleType",
+    "minimum": 0,
+    "maximum": 0,
+    "description": "addressLine3",
+    "label": {
+      "primary": "Present Street"
+    },
+    "controlType": "textbox",
+    "fieldType": "default",
+    "format": "none",
+    "validators": [{
+      "type": "regex",
+      "validator": "^(?=.{3,50}$).*",
+      "arguments": []
+    }],
+    "fieldCategory": "pvt",
+    "alignmentGroup": "present",
+    "visible": {
+      "engine": "MVEL",
+      "expr": "( identity['presentCountry'] != null )"
+    },
+    "contactType": "Postal",
+    "group": "PresentAddress",
+    "changeAction": "copyto:caddressLine3,addressLine3,addressCopy",
+    "required": false,
+    "bioAttributes": null,
+    "requiredOn": [{
+      "engine": "MVEL",
+      "expr": "( identity['presentCountry'] != null )"
+    }],
+    "subType": "addressLine3"
+  }, {
+    "id": "caddressLine4",
+    "inputRequired": true,
+    "type": "simpleType",
+    "minimum": 0,
+    "maximum": 0,
+    "description": "addressLine4",
+    "label": {
+      "primary": "Present Subdivision"
+    },
+    "controlType": "textbox",
+    "fieldType": "default",
+    "format": "none",
+    "validators": [{
+      "type": "regex",
+      "validator": "^(?=.{3,50}$).*",
+      "arguments": []
+    }],
+    "fieldCategory": "pvt",
+    "alignmentGroup": "present",
+    "visible": {
+      "engine": "MVEL",
+      "expr": "( identity['presentCountry'] != null )"
+    },
+    "contactType": "Postal",
+    "group": "PresentAddress",
+    "changeAction": "copyto:caddressLine4,addressLine4,addressCopy",
+    "required": false,
+    "bioAttributes": null,
+    "requiredOn": [{
+      "engine": "MVEL",
+      "expr": "( identity['presentCountry'] != null )"
+    }],
+    "subType": "addressLine4"
+  }, {
+    "id": "cprovince",
+    "inputRequired": true,
+    "type": "simpleType",
+    "minimum": 0,
+    "maximum": 0,
+    "description": "Province",
+    "label": {
+      "primary": "Present Province"
+    },
+    "controlType": "dropdown",
+    "fieldType": "default",
+    "format": "none",
+    "validators": [{
+      "type": "regex",
+      "validator": "^(?=.{0,50}$).*",
+      "arguments": []
+    }],
+    "fieldCategory": "pvt",
+    "alignmentGroup": "applicantAddressPresent",
+    "visible": {
+      "engine": "MVEL",
+      "expr": "( identity['presentCountry'] != null && identity['presentCountry'].get(0).value.equalsIgnoreCase('Philippines'))"
+    },
+    "contactType": "Postal",
+    "group": "PresentAddress",
+    "changeAction": "copyto:cprovince,province,addressCopy",
+    "required": false,
+    "bioAttributes": null,
+    "requiredOn": [{
+      "engine": "MVEL",
+      "expr": "( identity['presentCountry'] != null && identity['presentCountry'].get(0).value.equalsIgnoreCase('Philippines'))"
+    }],
+    "subType": "Province"
+  }, {
+    "id": "ccity",
+    "inputRequired": true,
+    "type": "simpleType",
+    "minimum": 0,
+    "maximum": 0,
+    "description": "City",
+    "label": {
+      "primary": "Present City"
+    },
+    "controlType": "dropdown",
+    "fieldType": "default",
+    "format": "none",
+    "validators": [{
+      "type": "regex",
+      "validator": "^(?=.{0,50}$).*",
+      "arguments": []
+    }],
+    "fieldCategory": "pvt",
+    "alignmentGroup": "applicantAddressPresent",
+    "visible": {
+      "engine": "MVEL",
+      "expr": "( identity['presentCountry'] != null && identity['presentCountry'].get(0).value.equalsIgnoreCase('Philippines'))"
+    },
+    "contactType": "Postal",
+    "group": "PresentAddress",
+    "changeAction": "copyto:ccity,city,addressCopy",
+    "required": false,
+    "bioAttributes": null,
+    "requiredOn": [{
+      "engine": "MVEL",
+      "expr": "( identity['presentCountry'] != null && identity['presentCountry'].get(0).value.equalsIgnoreCase('Philippines'))"
+    }],
+    "subType": "City"
+  }, {
+    "id": "cbarangay",
+    "inputRequired": true,
+    "type": "simpleType",
+    "minimum": 0,
+    "maximum": 0,
+    "description": "Barangay",
+    "label": {
+      "primary": "Present Barangay"
+    },
+    "controlType": "dropdown",
+    "fieldType": "default",
+    "format": "none",
+    "validators": [],
+    "fieldCategory": "pvt",
+    "alignmentGroup": "applicantAddressPresent",
+    "visible": {
+      "engine": "MVEL",
+      "expr": "( identity['presentCountry'] != null && identity['presentCountry'].get(0).value.equalsIgnoreCase('Philippines'))"
+    },
+    "contactType": "Postal",
+    "group": "PresentAddress",
+    "changeAction": "copyto:cbarangay,barangay,addressCopy",
+    "required": false,
+    "bioAttributes": null,
+    "requiredOn": [{
+      "engine": "MVEL",
+      "expr": "( identity['presentCountry'] != null && identity['presentCountry'].get(0).value.equalsIgnoreCase('Philippines'))"
+    }],
+    "subType": "Barangay"
+  }, {
+    "id": "cpostalcode",
+    "inputRequired": true,
+    "type": "simpleType",
+    "minimum": 0,
+    "maximum": 0,
+    "description": "postalCode",
+    "label": {
+      "primary": "Present Postal Code"
+    },
+    "controlType": "dropdown",
+    "fieldType": "default",
+    "format": "none",
+    "validators": [],
+    "fieldCategory": "pvt",
+    "alignmentGroup": "applicantAddressPresent",
+    "visible": {
+      "engine": "MVEL",
+      "expr": "( identity['presentCountry'] != null && identity['presentCountry'].get(0).value.equalsIgnoreCase('Philippines'))"
+    },
+    "contactType": "Postal",
+    "group": "PresentAddress",
+    "changeAction": "copyto:cpostalcode,postalcode,addressCopy",
+    "required": false,
+    "bioAttributes": null,
+    "requiredOn": [{
+      "engine": "MVEL",
+      "expr": "( identity['presentCountry'] != null && identity['presentCountry'].get(0).value.equalsIgnoreCase('Philippines'))"
+    }],
+    "subType": "Postal Code"
+  }, {
+    "id": "country",
+    "inputRequired": true,
+    "type": "simpleType",
+    "minimum": 0,
+    "maximum": 0,
+    "description": "Country",
+    "label": {
+      "primary": "Country"
+    },
+    "controlType": "dropdown",
+    "fieldType": "default",
+    "format": "none",
+    "validators": [{
+      "type": "regex",
+      "validator": "^(?=.{0,50}$).*",
+      "arguments": []
+    }],
+    "fieldCategory": "pvt",
+    "alignmentGroup": null,
+    "visible": null,
+    "contactType": "Postal",
+    "group": "PermanentAddress",
+    "changeAction": null,
+    "required": true,
+    "bioAttributes": null,
+    "requiredOn": [],
+    "subType": "Country"
+  }, {
+    "id": "addressLine1",
+    "inputRequired": true,
+    "type": "simpleType",
+    "minimum": 0,
+    "maximum": 0,
+    "description": "addressLine1",
+    "label": {
+      "primary": "Permanent Rm/Flr/Unit No. Bldg Name"
+    },
+    "controlType": "textbox",
+    "fieldType": "default",
+    "format": "none",
+    "validators": [{
+      "type": "regex",
+      "validator": "^(?=.{0,50}$).*",
+      "arguments": []
+    }],
+    "fieldCategory": "pvt",
+    "alignmentGroup": "permanent",
+    "visible": {
+      "engine": "MVEL",
+      "expr": "( identity['country'] != null )"
+    },
+    "contactType": "Postal",
+    "group": "PermanentAddress",
+    "changeAction": null,
+    "required": false,
+    "bioAttributes": null,
+    "requiredOn": [{
+      "engine": "MVEL",
+      "expr": "( identity['country'] != null )"
+    }],
+    "subType": "addressLine1"
+  }, {
+    "id": "addressLine2",
+    "inputRequired": true,
+    "type": "simpleType",
+    "minimum": 0,
+    "maximum": 0,
+    "description": "addressLine2",
+    "label": {
+      "primary": "Permanent House/Lot/Block no."
+    },
+    "controlType": "textbox",
+    "fieldType": "default",
+    "format": "none",
+    "validators": [{
+      "type": "regex",
+      "validator": "^(?=.{3,50}$).*",
+      "arguments": []
+    }],
+    "fieldCategory": "pvt",
+    "alignmentGroup": "permanent",
+    "visible": {
+      "engine": "MVEL",
+      "expr": "( identity['country'] != null )"
+    },
+    "contactType": "Postal",
+    "group": "PermanentAddress",
+    "changeAction": null,
+    "required": false,
+    "bioAttributes": null,
+    "requiredOn": [{
+      "engine": "MVEL",
+      "expr": "( identity['country'] != null )"
+    }],
+    "subType": "addressLine2"
+  }, {
+    "id": "addressLine3",
+    "inputRequired": true,
+    "type": "simpleType",
+    "minimum": 0,
+    "maximum": 0,
+    "description": "addressLine3",
+    "label": {
+      "primary": "Permanent Street"
+    },
+    "controlType": "textbox",
+    "fieldType": "default",
+    "format": "none",
+    "validators": [{
+      "type": "regex",
+      "validator": "^(?=.{3,50}$).*",
+      "arguments": []
+    }],
+    "fieldCategory": "pvt",
+    "alignmentGroup": "permanent",
+    "visible": {
+      "engine": "MVEL",
+      "expr": "( identity['country'] != null )"
+    },
+    "contactType": "Postal",
+    "group": "PermanentAddress",
+    "changeAction": null,
+    "required": false,
+    "bioAttributes": null,
+    "requiredOn": [{
+      "engine": "MVEL",
+      "expr": "( identity['country'] != null )"
+    }],
+    "subType": "addressLine3"
+  }, {
+    "id": "addressLine4",
+    "inputRequired": true,
+    "type": "simpleType",
+    "minimum": 0,
+    "maximum": 0,
+    "description": "addressLine4",
+    "label": {
+      "primary": "Permanent Subdivision"
+    },
+    "controlType": "textbox",
+    "fieldType": "default",
+    "format": "none",
+    "validators": [{
+      "type": "regex",
+      "validator": "^(?=.{3,50}$).*",
+      "arguments": []
+    }],
+    "fieldCategory": "pvt",
+    "alignmentGroup": "permanent",
+    "visible": {
+      "engine": "MVEL",
+      "expr": "( identity['country'] != null )"
+    },
+    "contactType": "Postal",
+    "group": "PermanentAddress",
+    "changeAction": null,
+    "required": false,
+    "bioAttributes": null,
+    "requiredOn": [{
+      "engine": "MVEL",
+      "expr": "( identity['country'] != null )"
+    }],
+    "subType": "addressLine4"
+  }, {
+    "id": "province",
+    "inputRequired": true,
+    "type": "simpleType",
+    "minimum": 0,
+    "maximum": 0,
+    "description": "province",
+    "label": {
+      "primary": "Province"
+    },
+    "controlType": "dropdown",
+    "fieldType": "default",
+    "format": "none",
+    "validators": [{
+      "type": "regex",
+      "validator": "^(?=.{0,50}$).*",
+      "arguments": []
+    }],
+    "fieldCategory": "pvt",
+    "alignmentGroup": "applicantAddressPermanent",
+    "visible": {
+      "engine": "MVEL",
+      "expr": "( identity['country'] != null && identity['country'].get(0).value.equalsIgnoreCase('Philippines'))"
+    },
+    "contactType": "Postal",
+    "group": "PermanentAddress",
+    "changeAction": null,
+    "required": false,
+    "bioAttributes": null,
+    "requiredOn": [{
+      "engine": "MVEL",
+      "expr": "( identity['country'] != null && identity['country'].get(0).value.equalsIgnoreCase('Philippines'))"
+    }],
+    "subType": "Province"
+  }, {
+    "id": "city",
+    "inputRequired": true,
+    "type": "simpleType",
+    "minimum": 0,
+    "maximum": 0,
+    "description": "City",
+    "label": {
+      "primary": "City"
+    },
+    "controlType": "dropdown",
+    "fieldType": "default",
+    "format": "none",
+    "validators": [{
+      "type": "regex",
+      "validator": "^(?=.{0,50}$).*",
+      "arguments": []
+    }],
+    "fieldCategory": "pvt",
+    "alignmentGroup": "applicantAddressPermanent",
+    "visible": {
+      "engine": "MVEL",
+      "expr": "( identity['country'] != null && identity['country'].get(0).value.equalsIgnoreCase('Philippines'))"
+    },
+    "contactType": "Postal",
+    "group": "PermanentAddress",
+    "changeAction": null,
+    "required": false,
+    "bioAttributes": null,
+    "requiredOn": [{
+      "engine": "MVEL",
+      "expr": "( identity['country'] != null && identity['country'].get(0).value.equalsIgnoreCase('Philippines'))"
+    }],
+    "subType": "City"
+  }, {
+    "id": "barangay",
+    "inputRequired": true,
+    "type": "simpleType",
+    "minimum": 0,
+    "maximum": 0,
+    "description": "Barangay",
+    "label": {
+      "primary": "Barangay"
+    },
+    "controlType": "dropdown",
+    "fieldType": "default",
+    "format": "none",
+    "validators": [],
+    "fieldCategory": "pvt",
+    "alignmentGroup": "applicantAddressPermanent",
+    "visible": {
+      "engine": "MVEL",
+      "expr": "( identity['country'] != null && identity['country'].get(0).value.equalsIgnoreCase('Philippines'))"
+    },
+    "contactType": "Postal",
+    "group": "PermanentAddress",
+    "changeAction": null,
+    "required": false,
+    "bioAttributes": null,
+    "requiredOn": [{
+      "engine": "MVEL",
+      "expr": "( identity['country'] != null && identity['country'].get(0).value.equalsIgnoreCase('Philippines'))"
+    }],
+    "subType": "Barangay"
+  }, {
+    "id": "postalcode",
+    "inputRequired": true,
+    "type": "simpleType",
+    "minimum": 0,
+    "maximum": 0,
+    "description": "postalCode",
+    "label": {
+      "primary": "Postal Code"
+    },
+    "controlType": "dropdown",
+    "fieldType": "default",
+    "format": "none",
+    "validators": [],
+    "fieldCategory": "pvt",
+    "alignmentGroup": "applicantAddressPermanent",
+    "visible": {
+      "engine": "MVEL",
+      "expr": "( identity['country'] != null && identity['country'].get(0).value.equalsIgnoreCase('Philippines'))"
+    },
+    "contactType": "Postal",
+    "group": "PermanentAddress",
+    "changeAction": null,
+    "required": false,
+    "bioAttributes": null,
+    "requiredOn": [{
+      "engine": "MVEL",
+      "expr": "( identity['country'] != null && identity['country'].get(0).value.equalsIgnoreCase('Philippines'))"
+    }],
+    "subType": "Postal Code"
+  }, {
+    "id": "phone",
+    "inputRequired": true,
+    "type": "string",
+    "minimum": 0,
+    "maximum": 0,
+    "description": "phone",
+    "label": {
+      "primary": "Mobile Number (Optional)"
+    },
+    "controlType": "textbox",
+    "fieldType": "default",
+    "format": "none",
+    "validators": [{
+      "type": "regex",
+      "validator": "^[+]*([0-9]{1})([0-9]{9})$",
+      "arguments": []
+    }],
+    "fieldCategory": "pvt",
+    "alignmentGroup": "contactdetails",
+    "visible": null,
+    "contactType": "email",
+    "group": "Phone",
+    "changeAction": null,
+    "required": false,
+    "bioAttributes": null,
+    "requiredOn": [],
+    "subType": "none"
+  }, {
+    "id": "email",
+    "inputRequired": true,
+    "type": "string",
+    "minimum": 0,
+    "maximum": 0,
+    "description": "email",
+    "label": {
+      "primary": "Email ID(Optional)"
+    },
+    "controlType": "textbox",
+    "fieldType": "default",
+    "format": "none",
+    "validators": [{
+      "type": "regex",
+      "validator": "^[A-Za-z0-9_\\-]+(\\.[A-Za-z0-9_]+)*@[A-Za-z0-9_-]+(\\.[A-Za-z0-9_]+)*(\\.[a-zA-Z]{2,})$",
+      "arguments": []
+    }],
+    "fieldCategory": "pvt",
+    "alignmentGroup": "contactdetails",
+    "visible": null,
+    "contactType": "email",
+    "group": "Email",
+    "changeAction": null,
+    "required": false,
+    "bioAttributes": null,
+    "requiredOn": [],
+    "subType": "none"
+  }, {
+    "id": "modeOfClaim",
+    "inputRequired": true,
+    "type": "simpleType",
+    "minimum": 0,
+    "maximum": 0,
+    "description": "Mode of Claim",
+    "label": {
+      "primary": "Mode of Claim"
+    },
+    "controlType": "dropdown",
+    "fieldType": "dynamic",
+    "format": "none",
+    "validators": [],
+    "fieldCategory": "pvt",
+    "alignmentGroup": "miscellaneous1",
+    "visible": null,
+    "contactType": null,
+    "group": "Mode of Calim",
+    "changeAction": null,
+    "required": false,
+    "bioAttributes": null,
+    "requiredOn": [],
+    "subType": "none"
+  }, {
+    "id": "registrationType",
+    "inputRequired": true,
+    "type": "simpleType",
+    "minimum": 0,
+    "maximum": 0,
+    "description": "Registration Type",
+    "label": {
+      "primary": "Registration Type"
+    },
+    "controlType": "dropdown",
+    "fieldType": "dynamic",
+    "format": "none",
+    "validators": [],
+    "fieldCategory": "pvt",
+    "alignmentGroup": "miscellaneous1",
+    "visible": null,
+    "contactType": null,
+    "group": "Registration Type",
+    "changeAction": null,
+    "required": false,
+    "bioAttributes": null,
+    "requiredOn": [],
+    "subType": "none"
+  }, {
+    "id": "parentOrGuardianName",
+    "inputRequired": true,
+    "type": "simpleType",
+    "minimum": 0,
+    "maximum": 0,
+    "description": "parentOrGuardianName",
+    "label": {
+      "primary": "Parent Name"
+    },
+    "controlType": "textbox",
+    "fieldType": "default",
+    "format": "none",
+    "validators": [],
+    "fieldCategory": "evidence",
+    "alignmentGroup": null,
+    "visible": {
+      "engine": "MVEL",
+      "expr": "( identity.size() > 0 && (( identity.?isNew && identity.?isChild ) || ( identity.?isUpdate && identity.?isChild )))"
+    },
+    "contactType": null,
+    "group": "GuardianDetails",
+    "changeAction": null,
+    "required": false,
+    "bioAttributes": null,
+    "requiredOn": [{
+      "engine": "MVEL",
+      "expr": "( identity.size() > 0 && (( identity.?isNew && identity.?isChild ) || ( identity.?isUpdate && identity.?isChild )))"
+    }],
+    "subType": "parentOrGuardianName"
+  }, {
+    "id": "parentOrGuardianRID",
+    "inputRequired": true,
+    "type": "string",
+    "minimum": 0,
+    "maximum": 0,
+    "description": "parentOrGuardianRID",
+    "label": {
+      "primary": "Parent RID"
+    },
+    "controlType": "textbox",
+    "fieldType": "default",
+    "format": "none",
+    "validators": [],
+    "fieldCategory": "evidence",
+    "alignmentGroup": null,
+    "visible": {
+      "engine": "MVEL",
+      "expr": "( identity.size() > 0 && (( identity.?isNew && identity.?isChild ) || ( identity.isUpdate && identity.?isChild )))"
+    },
+    "contactType": null,
+    "group": "GuardianDetails",
+    "changeAction": null,
+    "required": false,
+    "bioAttributes": null,
+    "requiredOn": [{
+      "engine": "MVEL",
+      "expr": "( identity.size() > 0 && ( identity.?isChild && (identity.parentOrGuardianUIN == nil || identity.parentOrGuardianUIN == empty) ))"
+    }],
+    "subType": "RID"
+  }, {
+    "id": "parentOrGuardianUIN",
+    "inputRequired": true,
+    "type": "string",
+    "minimum": 0,
+    "maximum": 0,
+    "description": "parentOrGuardianUIN",
+    "label": {
+      "primary": "Parent UIN"
+    },
+    "controlType": "textbox",
+    "fieldType": "default",
+    "format": "none",
+    "validators": [],
+    "fieldCategory": "evidence",
+    "alignmentGroup": null,
+    "visible": {
+      "engine": "MVEL",
+      "expr": "( identity.size() > 0 && (( identity.?isNew && identity.?isChild ) || ( identity.isUpdate && identity.?isChild )))"
+    },
+    "contactType": null,
+    "group": "GuardianDetails",
+    "changeAction": null,
+    "required": false,
+    "bioAttributes": null,
+    "requiredOn": [{
+      "engine": "MVEL",
+      "expr": "( identity.size() > 0 && (( identity.?isChild && (identity.parentOrGuardianRID == nil || identity.parentOrGuardianRID == empty) )))"
+    }],
+    "subType": "UIN"
+  }, {
+    "id": "proofOfConsent",
+    "inputRequired": true,
+    "type": "documentType",
+    "minimum": 0,
+    "maximum": 0,
+    "description": "proofOfConsent",
+    "label": {
+      "primary": "Consent Proof"
+    },
+    "controlType": "fileupload",
+    "fieldType": "default",
+    "format": "none",
+    "validators": [],
+    "fieldCategory": "pvt",
+    "alignmentGroup": null,
+    "visible": null,
+    "contactType": null,
+    "group": "Documents",
+    "changeAction": null,
+    "required": false,
+    "bioAttributes": null,
+    "requiredOn": [],
+    "subType": "COU"
+  }, {
+    "id": "proofOfAddress",
+    "inputRequired": true,
+    "type": "documentType",
+    "minimum": 0,
+    "maximum": 0,
+    "description": "proofOfAddress",
+    "label": {
+      "primary": "Address Proof"
+    },
+    "controlType": "fileupload",
+    "fieldType": "default",
+    "format": "none",
+    "validators": [],
+    "fieldCategory": "pvt",
+    "alignmentGroup": null,
+    "visible": null,
+    "contactType": null,
+    "group": "Documents",
+    "changeAction": null,
+    "required": false,
+    "bioAttributes": null,
+    "requiredOn": [{
+      "engine": "MVEL",
+      "expr": "identity.?isNew || ( identity.isUpdate && (identity.updatableFields contains 'addressLine1' || identity.updatableFields contains 'addressLine2' || identity.updatableFields contains 'addressLine3'))"
+    }],
+    "subType": "POA"
+  }, {
+    "id": "proofOfIdentity",
+    "inputRequired": true,
+    "type": "documentType",
+    "minimum": 0,
+    "maximum": 0,
+    "description": "proofOfIdentity",
+    "label": {
+      "primary": "Identity Proof"
+    },
+    "controlType": "fileupload",
+    "fieldType": "default",
+    "format": "none",
+    "validators": [],
+    "fieldCategory": "pvt",
+    "alignmentGroup": null,
+    "visible": null,
+    "contactType": null,
+    "group": "Documents",
+    "changeAction": null,
+    "required": true,
+    "bioAttributes": null,
+    "requiredOn": [{
+      "engine": "MVEL",
+      "expr": "identity.?isNew || ( identity.isUpdate && identity.updatableFields contains 'fullName')"
+    }],
+    "subType": "POI"
+  }, {
+    "id": "proofOfRelationship",
+    "inputRequired": true,
+    "type": "documentType",
+    "minimum": 0,
+    "maximum": 0,
+    "description": "proofOfRelationship",
+    "label": {
+      "primary": "Relationship Proof"
+    },
+    "controlType": "fileupload",
+    "fieldType": "default",
+    "format": "none",
+    "validators": [],
+    "fieldCategory": "pvt",
+    "alignmentGroup": null,
+    "visible": null,
+    "contactType": null,
+    "group": "Documents",
+    "changeAction": null,
+    "required": false,
+    "bioAttributes": null,
+    "requiredOn": [{
+      "engine": "MVEL",
+      "expr": "( identity.?isNew && identity.?isChild ) || ( identity.isUpdate && (identity.updatableFieldGroups contains 'GuardianDetails' || identity.?isChild))"
+    }],
+    "subType": "POR"
+  }, {
+    "id": "proofOfDateOfBirth",
+    "inputRequired": true,
+    "type": "documentType",
+    "minimum": 0,
+    "maximum": 0,
+    "description": "proofOfDateOfBirth",
+    "label": {
+      "primary": "DOB Proof"
+    },
+    "controlType": "fileupload",
+    "fieldType": "default",
+    "format": "none",
+    "validators": [],
+    "fieldCategory": "pvt",
+    "alignmentGroup": null,
+    "visible": null,
+    "contactType": null,
+    "group": "Documents",
+    "changeAction": null,
+    "required": false,
+    "bioAttributes": null,
+    "requiredOn": [{
+      "engine": "MVEL",
+      "expr": "identity.isUpdate && identity.updatableFields contains 'dateOfBirth'"
+    }],
+    "subType": "POB"
+  }, {
+    "id": "proofOfException",
+    "inputRequired": true,
+    "type": "documentType",
+    "minimum": 0,
+    "maximum": 0,
+    "description": "proofOfException",
+    "label": {
+      "primary": "Exception Proof"
+    },
+    "controlType": "fileupload",
+    "fieldType": "default",
+    "format": "none",
+    "validators": [],
+    "fieldCategory": "evidence",
+    "alignmentGroup": null,
+    "visible": null,
+    "contactType": null,
+    "group": "Documents",
+    "changeAction": null,
+    "required": false,
+    "bioAttributes": null,
+    "requiredOn": [],
+    "subType": "POE"
+  }, {
+    "id": "individualBiometrics",
+    "inputRequired": true,
+    "type": "biometricsType",
+    "minimum": 0,
+    "maximum": 0,
+    "description": "",
+    "label": {
+      "primary": "Applicant Biometrics"
+    },
+    "controlType": "biometrics",
+    "fieldType": "default",
+    "format": "none",
+    "validators": [],
+    "fieldCategory": "pvt",
+    "alignmentGroup": null,
+    "visible": null,
+    "contactType": null,
+    "group": "Biometrics",
+    "changeAction": null,
+    "required": true,
+    "bioAttributes": ["leftEye", "rightEye", "rightIndex", "rightLittle", "rightRing", "rightMiddle", "leftIndex", "leftLittle", "leftRing", "leftMiddle", "leftThumb", "rightThumb", "face"],
+    "requiredOn": [{
+      "engine": "MVEL",
+      "expr": "(identity.?isNew || identity.isLost || ( identity.isUpdate && identity.updatableFieldGroups contains 'Biometrics'))"
+    }],
+    "subType": "applicant"
+  }, {
+    "id": "individualAuthBiometrics",
+    "inputRequired": true,
+    "type": "biometricsType",
+    "minimum": 0,
+    "maximum": 0,
+    "description": "Used to hold biometrics only for authentication",
+    "label": {
+      "primary": "Authentication Biometrics"
+    },
+    "controlType": "biometrics",
+    "fieldType": "default",
+    "format": "none",
+    "validators": [],
+    "fieldCategory": "pvt",
+    "alignmentGroup": null,
+    "visible": null,
+    "contactType": null,
+    "group": null,
+    "changeAction": null,
+    "required": false,
+    "bioAttributes": ["leftEye", "rightEye", "rightIndex", "rightLittle", "rightRing", "rightMiddle", "leftIndex", "leftLittle", "leftRing", "leftMiddle", "leftThumb", "rightThumb", "face"],
+    "requiredOn": [{
+      "engine": "MVEL",
+      "expr": "!identity.?isChild && identity.isUpdate && !(identity.updatableFieldGroups contains 'Biometrics' || identity.updatableFieldGroups contains 'GuardianDetails')"
+    }],
+    "subType": "applicant-auth"
+  }, {
+    "id": "parentOrGuardianBiometrics",
+    "inputRequired": true,
+    "type": "biometricsType",
+    "minimum": 0,
+    "maximum": 0,
+    "description": "",
+    "label": {
+      "primary": "Guardian Biometrics"
+    },
+    "controlType": "biometrics",
+    "fieldType": "default",
+    "format": "none",
+    "validators": [],
+    "fieldCategory": "pvt",
+    "alignmentGroup": null,
+    "visible": null,
+    "contactType": null,
+    "group": "Biometrics",
+    "changeAction": null,
+    "required": false,
+    "bioAttributes": ["leftEye", "rightEye", "rightIndex", "rightLittle", "rightRing", "rightMiddle", "leftIndex", "leftLittle", "leftRing", "leftMiddle", "leftThumb", "rightThumb", "face"],
+    "requiredOn": [{
+      "engine": "MVEL",
+      "expr": "(identity.?isChild && identity.?isNew) || (identity.isUpdate && identity.updatableFieldGroups contains 'GuardianDetails')"
+    }],
+    "subType": "introducer"
+  }],
+  "schemaJson": "{\"$schema\":\"http:\\/\\/json-schema.org\\/draft-07\\/schema#\",\"description\":\"Philsys identity schema\",\"additionalProperties\":false,\"title\":\"Philsys identity schema\",\"type\":\"object\",\"definitions\":{\"simpleType\":{\"uniqueItems\":true,\"additionalItems\":false,\"type\":\"array\",\"items\":{\"additionalProperties\":false,\"type\":\"object\",\"required\":[\"language\",\"value\"],\"properties\":{\"language\":{\"type\":\"string\"},\"value\":{\"type\":\"string\"}}}},\"documentType\":{\"additionalProperties\":false,\"type\":\"object\",\"required\":[\"format\",\"type\",\"value\"],\"properties\":{\"refNumber\":{\"type\":\"string\"},\"format\":{\"type\":\"string\"},\"type\":{\"type\":\"string\"},\"value\":{\"type\":\"string\"}}},\"biometricsType\":{\"additionalProperties\":false,\"type\":\"object\",\"properties\":{\"format\":{\"type\":\"string\"},\"version\":{\"type\":\"number\",\"minimum\":0},\"value\":{\"type\":\"string\"}}}},\"properties\":{\"identity\":{\"additionalProperties\":false,\"type\":\"object\",\"required\":[\"IDSchemaVersion\",\"firstName\",\"middleName\",\"lastName\",\"dateOfBirth\",\"pobCountry\",\"pobprovince\",\"pobcity\",\"gender\",\"bloodType\",\"addressCopy\",\"country\",\"presentCountry\",\"proofOfIdentity\",\"individualBiometrics\"],\"properties\":{\"country\":{\"bioAttributes\":[],\"validators\":[{\"validator\":\"^(?=.{0,50}$).*\",\"arguments\":[],\"type\":\"regex\"}],\"fieldCategory\":\"pvt\",\"format\":\"none\",\"fieldType\":\"default\",\"$ref\":\"#\\/definitions\\/simpleType\"},\"pobCountry\":{\"bioAttributes\":[],\"validators\":[{\"validator\":\"^(?=.{0,50}$).*\",\"arguments\":[],\"type\":\"regex\"}],\"fieldCategory\":\"pvt\",\"format\":\"none\",\"fieldType\":\"default\",\"$ref\":\"#\\/definitions\\/simpleType\"},\"cpostalcode\":{\"bioAttributes\":[],\"fieldCategory\":\"pvt\",\"format\":\"none\",\"fieldType\":\"default\",\"$ref\":\"#\\/definitions\\/simpleType\"},\"cprovince\":{\"bioAttributes\":[],\"validators\":[{\"validator\":\"^(?=.{0,50}$).*\",\"arguments\":[],\"type\":\"regex\"}],\"fieldCategory\":\"pvt\",\"format\":\"none\",\"fieldType\":\"default\",\"$ref\":\"#\\/definitions\\/simpleType\"},\"suffix\":{\"bioAttributes\":[],\"validators\":[{\"validator\":\"^(?=.{3,50}$).*\",\"arguments\":[],\"type\":\"regex\"}],\"fieldCategory\":\"pvt\",\"format\":\"none\",\"fieldType\":\"default\",\"$ref\":\"#\\/definitions\\/simpleType\"},\"province\":{\"bioAttributes\":[],\"validators\":[{\"validator\":\"^(?=.{0,50}$).*\",\"arguments\":[],\"type\":\"regex\"}],\"fieldCategory\":\"pvt\",\"format\":\"none\",\"fieldType\":\"default\",\"$ref\":\"#\\/definitions\\/simpleType\"},\"proofOfDateOfBirth\":{\"bioAttributes\":[],\"fieldCategory\":\"pvt\",\"format\":\"none\",\"fieldType\":\"default\",\"$ref\":\"#\\/definitions\\/documentType\"},\"pobcity\":{\"bioAttributes\":[],\"validators\":[{\"validator\":\"^(?=.{0,50}$).*\",\"arguments\":[],\"type\":\"regex\"}],\"fieldCategory\":\"pvt\",\"format\":\"none\",\"fieldType\":\"default\",\"$ref\":\"#\\/definitions\\/simpleType\"},\"addressLine1\":{\"bioAttributes\":[],\"validators\":[{\"validator\":\"^(?=.{0,50}$).*\",\"arguments\":[],\"type\":\"regex\"}],\"fieldCategory\":\"pvt\",\"format\":\"none\",\"fieldType\":\"default\",\"$ref\":\"#\\/definitions\\/simpleType\"},\"addressLine2\":{\"bioAttributes\":[],\"validators\":[{\"validator\":\"^(?=.{3,50}$).*\",\"arguments\":[],\"type\":\"regex\"}],\"fieldCategory\":\"pvt\",\"format\":\"none\",\"fieldType\":\"default\",\"$ref\":\"#\\/definitions\\/simpleType\"},\"addressLine3\":{\"bioAttributes\":[],\"validators\":[{\"validator\":\"^(?=.{3,50}$).*\",\"arguments\":[],\"type\":\"regex\"}],\"fieldCategory\":\"pvt\",\"format\":\"none\",\"fieldType\":\"default\",\"$ref\":\"#\\/definitions\\/simpleType\"},\"addressLine4\":{\"bioAttributes\":[],\"validators\":[{\"validator\":\"^(?=.{3,50}$).*\",\"arguments\":[],\"type\":\"regex\"}],\"fieldCategory\":\"pvt\",\"format\":\"none\",\"fieldType\":\"default\",\"$ref\":\"#\\/definitions\\/simpleType\"},\"firstName\":{\"bioAttributes\":[],\"validators\":[{\"validator\":\"^(?=.{3,50}$).*\",\"arguments\":[],\"type\":\"regex\"}],\"fieldCategory\":\"pvt\",\"format\":\"none\",\"fieldType\":\"default\",\"$ref\":\"#\\/definitions\\/simpleType\"},\"parentOrGuardianUIN\":{\"bioAttributes\":[],\"fieldCategory\":\"evidence\",\"format\":\"none\",\"type\":\"string\",\"fieldType\":\"default\"},\"IDSchemaVersion\":{\"bioAttributes\":[],\"fieldCategory\":\"none\",\"format\":\"none\",\"type\":\"number\",\"fieldType\":\"default\",\"minimum\":0},\"proofOfException\":{\"bioAttributes\":[],\"fieldCategory\":\"evidence\",\"format\":\"none\",\"fieldType\":\"default\",\"$ref\":\"#\\/definitions\\/documentType\"},\"phone\":{\"bioAttributes\":[],\"validators\":[{\"validator\":\"^[+]*([0-9]{1})([0-9]{9})$\",\"arguments\":[],\"type\":\"regex\"}],\"fieldCategory\":\"pvt\",\"format\":\"none\",\"type\":\"string\",\"fieldType\":\"default\"},\"registrationType\":{\"bioAttributes\":[],\"fieldCategory\":\"pvt\",\"format\":\"none\",\"fieldType\":\"dynamic\",\"$ref\":\"#\\/definitions\\/simpleType\"},\"presentCountry\":{\"bioAttributes\":[],\"validators\":[{\"validator\":\"^(?=.{0,50}$).*\",\"arguments\":[],\"type\":\"regex\"}],\"fieldCategory\":\"pvt\",\"format\":\"none\",\"fieldType\":\"default\",\"$ref\":\"#\\/definitions\\/simpleType\"},\"proofOfRelationship\":{\"bioAttributes\":[],\"fieldCategory\":\"pvt\",\"format\":\"none\",\"fieldType\":\"default\",\"$ref\":\"#\\/definitions\\/documentType\"},\"UIN\":{\"bioAttributes\":[],\"fieldCategory\":\"none\",\"format\":\"none\",\"type\":\"string\",\"fieldType\":\"default\"},\"cbarangay\":{\"bioAttributes\":[],\"fieldCategory\":\"pvt\",\"format\":\"none\",\"fieldType\":\"default\",\"$ref\":\"#\\/definitions\\/simpleType\"},\"maritalStatus\":{\"bioAttributes\":[],\"fieldCategory\":\"pvt\",\"format\":\"none\",\"fieldType\":\"dynamic\",\"$ref\":\"#\\/definitions\\/simpleType\"},\"lastName\":{\"bioAttributes\":[],\"validators\":[{\"validator\":\"^(?=.{3,50}$).*\",\"arguments\":[],\"type\":\"regex\"}],\"fieldCategory\":\"pvt\",\"format\":\"none\",\"fieldType\":\"default\",\"$ref\":\"#\\/definitions\\/simpleType\"},\"proofOfAddress\":{\"bioAttributes\":[],\"fieldCategory\":\"pvt\",\"format\":\"none\",\"fieldType\":\"default\",\"$ref\":\"#\\/definitions\\/documentType\"},\"gender\":{\"bioAttributes\":[],\"fieldCategory\":\"pvt\",\"format\":\"\",\"fieldType\":\"default\",\"$ref\":\"#\\/definitions\\/simpleType\"},\"city\":{\"bioAttributes\":[],\"validators\":[{\"validator\":\"^(?=.{0,50}$).*\",\"arguments\":[],\"type\":\"regex\"}],\"fieldCategory\":\"pvt\",\"format\":\"none\",\"fieldType\":\"default\",\"$ref\":\"#\\/definitions\\/simpleType\"},\"modeOfClaim\":{\"bioAttributes\":[],\"fieldCategory\":\"pvt\",\"format\":\"none\",\"fieldType\":\"dynamic\",\"$ref\":\"#\\/definitions\\/simpleType\"},\"proofOfConsent\":{\"bioAttributes\":[],\"fieldCategory\":\"pvt\",\"format\":\"none\",\"fieldType\":\"default\",\"$ref\":\"#\\/definitions\\/documentType\"},\"bloodType\":{\"bioAttributes\":[],\"fieldCategory\":\"pvt\",\"format\":\"\",\"fieldType\":\"dynamic\",\"$ref\":\"#\\/definitions\\/simpleType\"},\"pobprovince\":{\"bioAttributes\":[],\"validators\":[{\"validator\":\"^(?=.{0,50}$).*\",\"arguments\":[],\"type\":\"regex\"}],\"fieldCategory\":\"pvt\",\"format\":\"none\",\"fieldType\":\"default\",\"$ref\":\"#\\/definitions\\/simpleType\"},\"individualBiometrics\":{\"bioAttributes\":[\"leftEye\",\"rightEye\",\"rightIndex\",\"rightLittle\",\"rightRing\",\"rightMiddle\",\"leftIndex\",\"leftLittle\",\"leftRing\",\"leftMiddle\",\"leftThumb\",\"rightThumb\",\"face\"],\"fieldCategory\":\"pvt\",\"format\":\"none\",\"fieldType\":\"default\",\"$ref\":\"#\\/definitions\\/biometricsType\"},\"caddressLine4\":{\"bioAttributes\":[],\"validators\":[{\"validator\":\"^(?=.{3,50}$).*\",\"arguments\":[],\"type\":\"regex\"}],\"fieldCategory\":\"pvt\",\"format\":\"none\",\"fieldType\":\"default\",\"$ref\":\"#\\/definitions\\/simpleType\"},\"caddressLine3\":{\"bioAttributes\":[],\"validators\":[{\"validator\":\"^(?=.{3,50}$).*\",\"arguments\":[],\"type\":\"regex\"}],\"fieldCategory\":\"pvt\",\"format\":\"none\",\"fieldType\":\"default\",\"$ref\":\"#\\/definitions\\/simpleType\"},\"postalcode\":{\"bioAttributes\":[],\"fieldCategory\":\"pvt\",\"format\":\"none\",\"fieldType\":\"default\",\"$ref\":\"#\\/definitions\\/simpleType\"},\"caddressLine2\":{\"bioAttributes\":[],\"validators\":[{\"validator\":\"^(?=.{3,50}$).*\",\"arguments\":[],\"type\":\"regex\"}],\"fieldCategory\":\"pvt\",\"format\":\"none\",\"fieldType\":\"default\",\"$ref\":\"#\\/definitions\\/simpleType\"},\"caddressLine1\":{\"bioAttributes\":[],\"validators\":[{\"validator\":\"^(?=.{0,50}$).*\",\"arguments\":[],\"type\":\"regex\"}],\"fieldCategory\":\"pvt\",\"format\":\"none\",\"fieldType\":\"default\",\"$ref\":\"#\\/definitions\\/simpleType\"},\"residenceStatus\":{\"bioAttributes\":[],\"fieldCategory\":\"kyc\",\"format\":\"none\",\"fieldType\":\"default\",\"$ref\":\"#\\/definitions\\/simpleType\"},\"barangay\":{\"bioAttributes\":[],\"fieldCategory\":\"pvt\",\"format\":\"none\",\"fieldType\":\"default\",\"$ref\":\"#\\/definitions\\/simpleType\"},\"email\":{\"bioAttributes\":[],\"validators\":[{\"validator\":\"^[A-Za-z0-9_\\\\-]+(\\\\.[A-Za-z0-9_]+)*@[A-Za-z0-9_-]+(\\\\.[A-Za-z0-9_]+)*(\\\\.[a-zA-Z]{2,})$\",\"arguments\":[],\"type\":\"regex\"}],\"fieldCategory\":\"pvt\",\"format\":\"none\",\"type\":\"string\",\"fieldType\":\"default\"},\"parentOrGuardianRID\":{\"bioAttributes\":[],\"fieldCategory\":\"evidence\",\"format\":\"none\",\"type\":\"string\",\"fieldType\":\"default\"},\"parentOrGuardianBiometrics\":{\"bioAttributes\":[\"leftEye\",\"rightEye\",\"rightIndex\",\"rightLittle\",\"rightRing\",\"rightMiddle\",\"leftIndex\",\"leftLittle\",\"leftRing\",\"leftMiddle\",\"leftThumb\",\"rightThumb\",\"face\"],\"fieldCategory\":\"pvt\",\"format\":\"none\",\"fieldType\":\"default\",\"$ref\":\"#\\/definitions\\/biometricsType\"},\"addressCopy\":{\"bioAttributes\":[],\"validators\":[{\"validator\":\"^(?=.{0,50}$).*\",\"arguments\":[],\"type\":\"regex\"}],\"fieldCategory\":\"pvt\",\"format\":\"none\",\"type\":\"string\",\"fieldType\":\"default\"},\"dateOfBirth\":{\"bioAttributes\":[],\"validators\":[{\"validator\":\"^(1869|18[7-9][0-9]|19[0-9][0-9]|20[0-9][0-9])\\/([0][1-9]|1[0-2])\\/([0][1-9]|[1-2][0-9]|3[01])$\",\"arguments\":[],\"type\":\"regex\"}],\"fieldCategory\":\"pvt\",\"format\":\"none\",\"type\":\"string\",\"fieldType\":\"default\"},\"individualAuthBiometrics\":{\"bioAttributes\":[\"leftEye\",\"rightEye\",\"rightIndex\",\"rightLittle\",\"rightRing\",\"rightMiddle\",\"leftIndex\",\"leftLittle\",\"leftRing\",\"leftMiddle\",\"leftThumb\",\"rightThumb\",\"face\"],\"fieldCategory\":\"pvt\",\"format\":\"none\",\"fieldType\":\"default\",\"$ref\":\"#\\/definitions\\/biometricsType\"},\"ccity\":{\"bioAttributes\":[],\"validators\":[{\"validator\":\"^(?=.{0,50}$).*\",\"arguments\":[],\"type\":\"regex\"}],\"fieldCategory\":\"pvt\",\"format\":\"none\",\"fieldType\":\"default\",\"$ref\":\"#\\/definitions\\/simpleType\"},\"proofOfIdentity\":{\"bioAttributes\":[],\"fieldCategory\":\"pvt\",\"format\":\"none\",\"fieldType\":\"default\",\"$ref\":\"#\\/definitions\\/documentType\"},\"parentOrGuardianName\":{\"bioAttributes\":[],\"fieldCategory\":\"evidence\",\"format\":\"none\",\"fieldType\":\"default\",\"$ref\":\"#\\/definitions\\/simpleType\"},\"middleName\":{\"bioAttributes\":[],\"validators\":[{\"validator\":\"^(?=.{3,50}$).*\",\"arguments\":[],\"type\":\"regex\"}],\"fieldCategory\":\"pvt\",\"format\":\"none\",\"fieldType\":\"default\",\"$ref\":\"#\\/definitions\\/simpleType\"}}}}}",
+  "effectiveFrom": "2020-12-17T07:41:33.461"
+}

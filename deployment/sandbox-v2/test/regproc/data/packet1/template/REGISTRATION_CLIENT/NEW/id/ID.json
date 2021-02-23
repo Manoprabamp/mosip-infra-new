@@ -1,0 +1,134 @@
+{ "identity" : {
+  "lastName" : [ {
+    "language" : "eng",
+    "value" : "{{first_name}}"
+  } ],
+  "pobCountry" : [ {
+    "language" : "eng",
+    "value" : "{{pob_country}}" 
+  } ],
+  "proofOfAddress" : {
+    "value" : "proofOfAddress",
+    "type" : "DOC029",
+    "format" : "PDF"
+  },
+  "gender" : [ {
+    "language" : "eng",
+    "value" : "Male"
+  } ],
+  "proofOfConsent" : {
+    "value" : "proofOfConsent",
+    "type" : "DOC032",
+    "format" : "PDF"
+  },
+  "postalCode" : [ {
+    "language" : "eng",
+    "value" : "{postal_code}}"
+  } ],
+  "cprovince" : [ {
+    "language" : "eng",
+    "value" : "{{cprovince}}"
+  } ],
+  "suffix" : [ {
+    "language" : "eng",
+    "value" : "KAFNLN"
+  } ],
+  "bloodType" : [ {
+    "language" : "eng",
+    "value" : "O"
+  } ],
+  "pobprovince" : [ {
+    "language" : "eng",
+    "value" : "{{pobprovince}}"
+  } ],
+  "individualBiometrics" : {
+    "format" : "cbeff",
+    "version" : 1.0,
+    "value" : "individualBiometrics_bio_CBEFF"
+  },
+  "province" : [ {
+    "language" : "eng",
+    "value" : "Bataan"
+  } ],
+  "caddressLine4" : [ {
+    "language" : "eng",
+    "value" : "SSSSSSSS"
+  } ],
+  "caddressLine3" : [ {
+    "language" : "eng",
+    "value" : "SSSSSSSSSSSSSSSSS"
+  } ],
+  "caddressLine2" : [ {
+    "language" : "eng",
+    "value" : "SSSSSSSSSSSSSS"
+  } ],
+  "caddressLine1" : [ {
+    "language" : "eng",
+    "value" : "SSSSSSSSSSSS"
+  } ],
+  "pobcity" : [ {
+    "language" : "eng",
+    "value" : "Lingtan"
+  } ],
+  "addressLine1" : [ {
+    "language" : "eng",
+    "value" : "SSSSSSSSSSS"
+  } ],
+  "residenceStatus" : [ {
+    "language" : "eng",
+    "value" : "Resident Alien"
+  } ],
+  "addressLine2" : [ {
+    "language" : "eng",
+    "value" : "SSSSSSSSSSSSSS"
+  } ],
+  "addressLine3" : [ {
+    "language" : "eng",
+    "value" : "SSSSSSSSSS"
+  } ],
+  "addressLine4" : [ {
+    "language" : "eng",
+    "value" : "SSSSSSSSSSSSSSSS"
+  } ],
+  "email" : "piyush.singh@technoforte.co.in",
+  "Barangay" : [ {
+    "language" : "eng",
+    "value" : "Arellano (Pob.)"
+  } ],
+  "dateOfBirth" : "1998/01/01",
+  "City" : [ {
+    "language" : "eng",
+    "value" : "Orion"
+  } ],
+  "ccity" : [ {
+    "language" : "eng",
+    "value" : "Bangued (Capital)"
+  } ],
+  "firstName" : [ {
+    "language" : "eng",
+    "value" : "FNKLANFL"
+  } ],
+  "proofOfIdentity" : {
+    "value" : "proofOfIdentity",
+    "type" : "DOC017",
+    "format" : "PDF"
+  },
+  "IDSchemaVersion" : {{id_schema}},
+  "phone" : "{{phone}}",
+  "cPostalCode" : [ {
+    "language" : "eng",
+    "value" : "2800"
+  } ],
+  "middleName" : [ {
+    "language" : "eng",
+    "value" : "FAKNFLN"
+  } ],
+  "cbarangay" : [ {
+    "language" : "eng",
+    "value" : "Lingtan"
+  } ],
+  "maritalStatus" : [ {
+    "language" : "eng",
+    "value" : "Single"
+  } ]
+} }

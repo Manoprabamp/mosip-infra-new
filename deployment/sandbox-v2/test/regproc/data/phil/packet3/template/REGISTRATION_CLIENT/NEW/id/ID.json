@@ -1,0 +1,125 @@
+{ "identity" : {
+  "firstName" : [ {
+		"language" : "eng",
+		"value" : "Mono"
+	  } ],
+  "middleName" : [ {
+		"language" : "eng",
+		"value" : "Bikash"
+	  } ],
+  "lastName" : [ {
+    "language" : "eng",
+    "value" : "Das"
+  } ],
+  "proofOfAddress" : {
+    "value" : "proofOfAddress",
+    "type" : "RNC",
+    "format" : "pdf"
+  },
+  "gender" : [ {
+    "language" : "eng",
+    "value" : "Male"
+  } ],
+  "city" : [ {
+    "language" : "eng",
+    "value" : "{{city}}"
+  } ],
+  "postalCode" : [ {
+    "language" : "eng",
+    "value" : "{{postal_code}}"
+  } ],
+  "dateOfBirth" : "{{dob}}", 
+  "individualBiometrics" : {
+    "format" : "cbeff",
+    "version" : 1.0,
+    "value" : "individualBiometrics_bio_CBEFF"
+  },
+  "proofOfIdentity" : {
+    "value" : "proofOfIdentity",
+    "type" : "CIN",
+    "format" : "pdf"
+  },
+  "IDSchemaVersion" : {{id_schema}},
+  "province" : [ {
+    "language" : "eng",
+    "value" : "{{province}}"
+  } ],
+  "phone" : "{{phone}}",
+  "pobCountry" : [ {
+    "language" : "eng",
+    "value" : "{{pob_country}}"
+  } ],
+  "cprovince" : [ {
+    "language" : "eng",
+    "value" : "{{cprovince}}"
+  } ],
+  "suffix" : [ {
+    "language" : "eng",
+    "value" : "{{suffix}}"
+  } ],
+  "bloodType" : [ {
+    "language" : "eng",
+    "value" : "{{blood_type}}"
+  } ],
+  "pobprovince" : [ {
+    "language" : "eng",
+    "value" : "{{pob_province}}"
+  } ],
+  "caddressLine4" : [ {
+    "language" : "eng",
+    "value" : "{{caddress_line4}}"
+  } ],
+  "caddressLine3" : [ {
+    "language" : "eng",
+    "value" : "{{caddress_line3}}"
+  } ],
+  "caddressLine2" : [ {
+    "language" : "eng",
+    "value" : "{{caddress_line2}}"
+  } ],
+  "caddressLine1" : [ {
+    "language" : "eng",
+    "value" : "{{caddress_line1}}"
+  } ],
+  "pobcity" : [ {
+    "language" : "eng",
+    "value" : "{{pob_city}}"
+  } ],
+  "addressLine1" : [ {
+    "language" : "eng",
+    "value" : "{{address_line1}}"
+  } ],
+  "addressLine2" : [ {
+    "language" : "eng",
+    "value" : "{{address_line2}}"
+  } ],
+  "addressLine3" : [ {
+    "language" : "eng",
+    "value" : "{{address_line3}}"
+  } ],
+  "addressLine4" : [ {
+    "language" : "eng",
+    "value" : "{{address_line4}}"
+  } ],
+  "email" : "{{email}}",
+  "Barangay" : [ {
+    "language" : "eng",
+    "value" : "{{barangay}}"
+  } ],
+  "ccity" : [ {
+    "language" : "eng",
+    "value" : "{{ccity}}"
+  } ],
+  "cPostalCode" : [ {
+    "language" : "eng",
+    "value" : "{{cpostal_code}}"
+  } ],
+  "cbarangay" : [ {
+    "language" : "eng",
+    "value" : "{{cbarangay}}"
+  } ],
+  "maritalStatus" : [ {
+    "language" : "eng",
+    "value" : "{{marital_status}}"
+  } ]
+} } 

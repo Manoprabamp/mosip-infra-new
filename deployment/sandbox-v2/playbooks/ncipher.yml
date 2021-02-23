@@ -1,0 +1,45 @@
+# Playbook to install Ncipher HSM artifacts on each worker node
+# Ncipher HWSP docker is run on each node.  Configs are mounted centrally from NFS.
+# Socket folders on each node are mounted to their respective HSWSP docker.
+#
+- hosts: console
+  tasks:
+    - {name: 'Create folder', file: {name: '{{ncipher.config.path}}', state: directory}, become: yes}
+
+    - name: Copy configs to nfs folder
+      copy:
+         src: '{{install_root}}/roles/ncipher/files/secworld_files/'
+         dest: '{{ncipher.config.path}}'
+      become: yes
+
+- hosts: mzworkers
+  tasks:
+#    - name: Create docker volume for socket
+#      shell: 'docker volume create {{ncipher.socket.volume}}'
+#      become: yes
+     - name: Deleting existing
+       file:
+         path: '{{ncipher.socket.host_path}}'
+         state: absent
+         force: yes
+       become: yes
+     - name: Create folder socket
+       file:
+         path: '{{ncipher.socket.host_path}}'
+         state: directory
+         mode: '777'
+         force: yes
+       become: yes
+
+# Convert helm template to helm values 
+- hosts: console
+  vars:
+    kube_config: '{{clusters.mz.kube_config}}'
+    install_name: 'ncipher'
+    helm_chart: '{{charts_root}}/ncipher'
+    is_template: true  
+    helm_namespace: 'default'
+    helm_values: '{{charts_root}}/ncipher/values.template.j2'
+    helm_strings: ''
+  roles:
+    - {role:  helm}

@@ -1,0 +1,58 @@
+{ "identity" : {
+  "IDSchemaVersion" : {{id_schema}},
+  "firstName" : [{
+    "language" : "eng",
+    "value" : "{{first_name}}"
+   }],
+  "middleName" : [{
+    "language" : "eng",
+    "value" : "{{middle_name}}" 
+  }],
+  "lastName" : [{
+    "language" : "eng",
+    "value" : "{{last_name}}"
+  }],
+  "dateOfBirth" : "{{dob}}", 
+  "pobCountry" : [{
+    "language" : "eng",
+    "value" : "{{pob_country}}"
+  }],
+  "pobProvince" : [{
+    "language" : "eng",
+    "value" : "{{pob_province}}"
+  }],
+  "pobCity" : [{
+    "language" : "eng",
+    "value" : "{{pob_city}}"
+  }],
+  "gender" : [{
+    "language" : "eng",
+    "value" : "Male"
+  }],
+  "bloodType" : [{
+    "language" : "eng",
+    "value" : "{{blood_type}}"
+  }],
+  "presentCountry" : [{
+    "language" : "eng",
+    "value" : "{{present_country}}"
+  }],
+  "addressCopy" : [{
+    "language" : "eng",
+    "value" : "{{address_copy}}"
+  }],
+  "permanentCountry" : [{
+    "language" : "eng",
+    "value" : "{{permanent_country}}"
+  }],
+  "proofOfIdentity" : {
+    "value" : "proofOfIdentity",
+    "type" : "CIN",
+    "format" : "pdf"
+  },
+  "individualBiometrics" : {
+    "format" : "cbeff",
+    "version" : 1.0,
+    "value" : "individualBiometrics_bio_CBEFF"
+  }
+} } 
